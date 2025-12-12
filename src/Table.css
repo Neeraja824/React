@@ -1,0 +1,125 @@
+.table-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px;
+}
+.table-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.table-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+.status-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.transaction-table thead th {
+    text-align: left;
+    padding: 12px 10px;
+    color: #888;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+}
+.transaction-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+.transaction-table tbody tr:last-child {
+    border-bottom: none;
+}
+.transaction-table tbody td {
+    padding: 12px 10px;
+    color: #333;
+    vertical-align: middle;
+}
+.name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+.avatar-placeholder {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc; 
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="%23666" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>');
+    background-size: cover;
+}
+.amount-credit {
+    color: #28a745; 
+    font-weight: 500;
+}
+.amount-debit {
+    color: #dc3545; 
+    font-weight: 500;
+}
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.status-credit-bg {
+    background-color: #e6ffed; 
+    color: #28a745; 
+}
+.status-debit-bg {
+    background-color: #fce7e8; 
+    color: #dc3545; 
+}
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+}
+.transaction-count {
+    font-size: 0.9rem;
+    color: #555;
+}
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+.pagination-arrow, .pagination-page {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 35px;
+    text-align: center;
+}
+.pagination-page.active {
+    background-color: #007bff; 
+    color: #fff;
+    border-color: #007bff;
+}
+.pagination-arrow:hover:not(.active), .pagination-page:not(.active):hover {
+    background-color: #f1f1f1;
+}

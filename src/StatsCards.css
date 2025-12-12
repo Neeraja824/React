@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+}
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 50px;
+  justify-items: center;
+}
+.stats-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 280px;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.stats-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.stats-left h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+}
+.stats-title {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+.stats-change {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.stats-change.positive {
+  background-color: #dcfce7;
+  color: #166534;
+}
+.stats-change.negative {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+.stats-icon {
+  padding: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-title{
+    text-align: center;
+}

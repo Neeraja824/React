@@ -1,0 +1,158 @@
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import Card from './ProductCards.jsx';
+// import ProductInfo from './ProductInfo.jsx';
+// import './ProductCards.css';
+// import Image from './Image.jsx';
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//     <Image />
+//       <Routes>
+//         <Route path="/" element={<Card />} />
+//         <Route path="/products/:id" element={<ProductInfo />} />
+//         <Route path="/" element={<Header />} />
+//         <Route path="/form" element={<Form />} />
+//         <Route path="/cards" element={<Cards />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+// export default App;
+
+// import React from "react";
+//  import Apex from "./Apex.jsx"; 
+// import Salary from "./AverageSalary.jsx";
+// import StatsCards from "./StatsCards.jsx";
+// import Apexchart from "./Apexchart.jsx";
+// import Column from "./Column.jsx";
+// import Donut from "./Donut.jsx";
+// import Academic from "./Academic.jsx"
+// import Multiple from "./Multiple.jsx";
+// import "./Dashboard.css";
+// import Table from "./Table.jsx";
+// function App(){
+//   return (
+//     <>
+//     {/* <Apex />  */}
+//     <div className="card">
+//       <StatsCards />
+//     </div>
+//     <div className="card">
+//       <Apexchart />
+//       </div>
+//       <div className="card">
+//       <Table />
+//       </div>
+//       <div className="card">
+//         <Salary />
+//       </div>
+//       <div className="card">
+//         <Donut />
+//       </div>
+//       <div className="card">
+//         <Column />
+//       </div>
+//       <div className="card">
+//         <Academic />
+//       </div>
+//       <div className="card">
+//         <Multiple />
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
+// import React, { useState, createContext } from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Header from "./Header.jsx";
+// import Form from "./Forms.jsx";
+// import Cards from "./Cards.jsx";
+// import ProductInfo from "./ProductInfo.jsx";
+// import "./App.css";
+
+// export const ProductContext = createContext();
+
+// function App() {
+//   const [dataList, setDataList] = useState([]);
+
+//   return (
+//     <ProductContext.Provider value={{ dataList, setDataList }}>
+//       <BrowserRouter>
+//         <Header />
+//         <Routes>
+//           <Route path="/" element={<div></div>} />
+//           <Route path="/form" element={<Form />} />
+//           <Route path="/cards" element={<Cards />} />
+//           <Route path="/product/:id" element={<ProductInfo />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </ProductContext.Provider>
+//   );
+// }
+
+// export default App;
+
+
+
+// import React from "react";
+// import AddOns from "./AddOn's.jsx";
+// function App() {
+//   return(
+//     <AddOns />
+//   )
+// }
+// export default App;
+
+
+// import React from 'react';
+// import { NameProvider } from './NameContext';
+// import Component1 from './Component1';
+// import Component2 from './Component2';
+// import Component3 from './Component3';
+// import Component4 from './Component4';
+// import Component5 from './Component5';
+// function App() {
+//     return (
+//         <NameProvider>
+//             <div>
+//                 <Component1 />
+//                 <Component2 />
+//                 {/* <Component3 />
+//                 <Component4 />
+//                 <Component5 /> */}
+//             </div>
+//         </NameProvider>
+//     );
+// }
+// export default App;
+
+import React from "react";
+import axios from "axios";
+import "./App.css";
+function App(){
+  let baseURL="http://localhost:7000";
+  const fetchData=()=>{
+    axios.get(`${baseURL}/get-students`)
+    .then((result)=> console.log(result.data))
+    .catch((error)=> console.log(error))
+  };
+  let myuser={
+    name: "Aditya",
+    roll: "143"
+  };
+  const addStudents=()=>{
+    axios.post(`${baseURL}/add-students`, myuser)
+    .then((result)=> console.log(result.data))
+    .catch((error)=> console.log(error))
+  };
+  return(
+    <>
+    <h1>This is my Frontend Project!!</h1>
+    <button onClick={fetchData}>Fetch Data</button>
+    <button onClick={addStudents}>Add Students</button>
+    </>
+  )
+}
+export default App;
