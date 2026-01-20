@@ -196,23 +196,68 @@
 // export default App;
 
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Login";
-import Home from "./Home";
-import GetData from "./GetData";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Login from "./Login";
+// import Home from "./Home";
+// import GetData from "./GetData";
+// import "./App.css";
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Login />} />
+//         <Route path="/home" element={<Home />} />
+//         <Route path="/getdata" element={<GetData />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+// export default App;
+
+
+import { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 function App() {
+  const [data, setData] = useState(null);
+  const [img, setImg] = useState(null);
+  const upload = async () => {
+    const formData = new FormData();
+    for (let i = 0; i < data.length; i++) {
+      formData.append("file", data[i]);
+    }
+    try {
+      const result=await axios.post("http://localhost:9000/file-upload", formData);
+      setImg(result.data.filename);
+      alert("Successfully uploaded");
+    } catch (error) {
+      console.log("Failed to upload", error);
+    }
+  };
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/getdata" element={<GetData />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <input
+        type="file"
+        multiple
+        onChange={(e) => setData(e.target.files)}
+      />
+
+      {img ? (
+        <img
+          src={`http://localhost:9000/${img}`}
+          alt="uploaded"
+          width="200"
+        />
+      ) : (
+        <h1>No Image</h1>
+      )}
+
+      <button onClick={upload}>Upload</button>
+    </>
   );
 }
 
 export default App;
-
